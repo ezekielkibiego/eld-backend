@@ -1,0 +1,95 @@
+{
+	"info": {
+		"name": "ELD App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Home",
+			"request": {
+				"method": "GET",
+				"url": {
+					"raw": "http://127.0.0.1:8000/",
+					"protocol": "http",
+					"host": ["127.0.0.1"],
+					"port": "8000"
+				}
+			}
+		},
+		{
+			"name": "Create Trip",
+			"request": {
+				"method": "POST",
+				"header": [{"key": "Content-Type", "value": "application/json"}],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"current_location\": \"Nairobi\",\n    \"pickup_location\": \"Mombasa\",\n    \"dropoff_location\": \"Mtwapa\",\n    \"current_cycle_used\": 0\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/trips/",
+					"protocol": "http",
+					"host": ["127.0.0.1"],
+					"port": "8000",
+					"path": ["trips", ""]
+				}
+			}
+		},
+		{
+			"name": "Generate ELD Logs",
+			"request": {
+				"method": "POST",
+				"header": [{"key": "Content-Type", "value": "application/json"}],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"trip_id\": 1\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/trips/1/logs/",
+					"protocol": "http",
+					"host": ["127.0.0.1"],
+					"port": "8000",
+					"path": ["trips", "1", "logs", ""]
+				}
+			}
+		},
+		{
+			"name": "Export Logs as CSV",
+			"request": {
+				"method": "GET",
+				"url": {
+					"raw": "http://127.0.0.1:8000/trips/1/csv/",
+					"protocol": "http",
+					"host": ["127.0.0.1"],
+					"port": "8000",
+					"path": ["trips", "1", "csv", ""]
+				}
+			}
+		},
+		{
+			"name": "Export Logs as PDF",
+			"request": {
+				"method": "GET",
+				"url": {
+					"raw": "http://127.0.0.1:8000/trips/1/pdf/",
+					"protocol": "http",
+					"host": ["127.0.0.1"],
+					"port": "8000",
+					"path": ["trips", "1", "pdf", ""]
+				}
+			}
+		},
+		{
+			"name": "Export Logs as JSON",
+			"request": {
+				"method": "GET",
+				"url": {
+					"raw": "http://127.0.0.1:8000/trips/1/json/",
+					"protocol": "http",
+					"host": ["127.0.0.1"],
+					"port": "8000",
+					"path": ["trips", "1", "json", ""]
+				}
+			}
+		}
+	]
+}
